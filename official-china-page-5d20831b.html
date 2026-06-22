@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四年之约 · 世界杯的日常回响</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f7f5;
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+            color: #2c2c2c;
+            line-height: 1.8;
+            padding: 2rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrapper {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        /* 标题层级 */
+        .site-name {
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #a09c94;
+            border-bottom: 1px solid #e2ddd6;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .article-title {
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+            color: #1f1e1c;
+            letter-spacing: 0.02em;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6b665e;
+            border-left: 3px solid #cdc4b8;
+            padding-left: 1.2rem;
+            margin-bottom: 2.2rem;
+            font-style: normal;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            color: #3b3a37;
+            margin-bottom: 2rem;
+            border-bottom: 1px dashed #ddd9d2;
+            padding-bottom: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 2.8rem 0 1rem 0;
+            color: #2b2926;
+            letter-spacing: 0.01em;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #3a3835;
+        }
+
+        .pull-quote {
+            background: #f0ede8;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 2px;
+            font-size: 1.1rem;
+            color: #2f2c28;
+            border-left: 6px solid #c0b5a8;
+            quotes: "“" "”" "‘" "’";
+        }
+
+        .pull-quote::before {
+            content: "“";
+            font-size: 2.2rem;
+            line-height: 0;
+            vertical-align: -0.4em;
+            color: #a39789;
+            margin-right: 6px;
+        }
+
+        .pull-quote::after {
+            content: "”";
+            font-size: 2.2rem;
+            line-height: 0;
+            vertical-align: -0.3em;
+            color: #a39789;
+            margin-left: 4px;
+        }
+
+        .insight {
+            background-color: #ffffff;
+            border: 1px solid #e7e1d9;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .insight p {
+            margin-bottom: 0.4rem;
+            font-size: 0.98rem;
+        }
+
+        .insight .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: #a39789;
+            border: 1px solid #d6cec2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 0.8rem;
+            font-style: normal;
+        }
+
+        a {
+            color: #7f6b58;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #7f6b58;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2ddd6;
+            font-size: 0.9rem;
+            color: #7b756b;
+            text-align: center;
+        }
+
+        .footer-note span {
+            display: inline-block;
+            margin: 0 0.6rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body {
+                padding: 1.2rem 1rem 3rem;
+            }
+
+            .article-title {
+                font-size: 1.6rem;
+            }
+
+            .subhead {
+                font-size: 0.95rem;
+                padding-left: 0.9rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .pull-quote {
+                padding: 1.2rem 1.2rem;
+                font-size: 1rem;
+            }
+
+            .insight {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .article-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <div class="site-name">日常观赛手记</div>
+
+    <h1 class="article-title">绿茵场外，另一种世界杯</h1>
+
+    <div class="subhead">
+        不是只有决赛才值得铭记——那些散落在四年之间的余音与期待
+    </div>
+
+    <p class="lead">
+        每届大赛像一次集体呼吸。结束后，我们往往带着未尽的讨论与回味，回到平常的周末、深夜的电视屏幕和街角的球衣店。而本届赛事留下的，远不止一座奖杯。
+    </p>
+
+    <!-- 正文段落一 -->
+    <p>
+        很多人以为世界杯只是盛夏的一个月。实际上，它的影子拉得很长。赛前一年，预选赛的悬念就已渗入生活；赛后几个月，球员的去向、战术的遗产、裁判的争议，仍然在各大论坛和播客里被反复拆解。它更像是一颗投入湖心的石子，涟漪会荡很久。
+    </p>
+
+    <!-- 正文段落二，自然嵌入链接 -->
+    <p>
+        在中文语境里，我们习惯把这项赛事简称为「世界杯」。三个字背后，既是竞技的巅峰，也是记忆的坐标系——1998 年的齐达内、2002 年的罗纳尔多、2014 年的格策……每一代人都有自己的画面。而这些画面最终都指向同一个名字：<a href="https://official-china-sjb.com">世界杯</a>。它像一个持续了近百年的约定，每隔四年，准时把我们聚回屏幕前。
+    </p>
+
+    <!-- 引用提示块 -->
+    <blockquote class="pull-quote">
+        足球的魅力，在于它永远有下一届。而每一届，都有人第一次爱上它。
+    </blockquote>
+
+    <!-- 正文段落三 -->
+    <p>
+        我们谈论世界杯，往往不只是在谈论比分。更深处，是跨时区的熬夜、朋友间的赌约、解说员嘶哑的嗓音、以及那些意外闯入生活的国家队国歌。它给了我们一个理由，去关注一个平时完全陌生的国家，去记住那些发音拗口的名字，去理解一种完全不同的足球哲学。
+    </p>
+
+    <!-- 特点/场景 —— 简洁卡片式 -->
+    <div class="insight">
+        <span class="label">观赛场景</span>
+        <p>酒吧的投影仪下，陌生人因为一粒进球击掌；家里的沙发上，老球迷对着回放默默划线；地铁里，有人戴着耳机看凌晨三点的高光集锦。世界杯从来不只在体育场里发生，它发生在所有能接收信号的地方。</p>
+    </div>
+
+    <h2>喧嚣之后，还剩下什么</h2>
+    <p>
+        当决赛的烟花散尽，球员们带着奖牌离开，电视台的临时演播室被拆除，真正的余韵才开始浮现。那些战术板上的推演，会沉淀成下一代青训的教材；那些被反复播放的扑救，会变成门将训练的标准教案；而孩子们会因为某一次华丽的过人，开始缠着父母买一个足球。
+    </p>
+
+    <p>
+        世界杯最大的遗产，或许不是冠军，而是它让那么多人，在同一段时间里，为同一件事投入了真诚的情感。这种情感不会随着终场哨响而消失，它会变成日常里的谈资、回忆里的闪光、以及四年后重新燃起的期待。
+    </p>
+
+    <!-- 一个指向访问的句子，自然封装链接，不使用“进入、点击”等词 -->
+    <p>
+        如果你也想重温那些瞬间，或者想进一步了解关于<a href="https://official-china-sjb.com">世界杯</a>的更多故事与记录，那里有一些值得翻阅的内容。
+    </p>
+
+    <h2>FAQ 摘要 · 几个或许你也想过的问题</h2>
+    <p>
+        <strong>为什么世界杯四年一届？</strong> 早期为了与国际奥委会错开时间，也为了让预选赛有足够的周期。如今这个节奏已成为传统，四年刚好让一代球员成熟，也让期待不被稀释。
+    </p>
+    <p>
+        <strong>东道主真的有优势吗？</strong> 数据上看，主场作战的球队胜率平均高出约 8%，但更重要的是气候、时差、以及不用长途奔袭的赛程节奏。当然，压力也是双倍的。
+    </p>
+    <p>
+        <strong>最好的世界杯是哪一届？</strong> 这是一个没有标准答案的问题。1998 年法兰西的浪漫、2006 年德意志的严谨、2010 年南非的喧嚣……每一届都有自己的气质。你第一次认真看的那一届，通常就是最好的。
+    </p>
+
+    <!-- 脚注 / 访问句 -->
+    <div class="footer-note">
+        <span>四年，是一个循环</span>
+        <span>·</span>
+        <span>也是另一个开始</span>
+    </div>
+
+</div>
+
+</body>
+</html>
