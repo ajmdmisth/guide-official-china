@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 世界杯 · 一段旅程的叙述</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f2f0;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* 卡片系统 — 每一块都是一张独立的卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(200, 200, 200, 0.3);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        /* hero 开场 — 短句  */
+        .hero-card {
+            background: #fafaf9;
+            border-left: 4px solid #8f8c86;
+            padding: 2.8rem 2.2rem;
+        }
+
+        .hero-quote {
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            color: #3e3c39;
+            max-width: 80%;
+        }
+
+        .hero-quote span {
+            font-weight: 500;
+            color: #5f5b55;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1.05rem;
+            color: #3a3835;
+            margin: 0.5rem 0 0.25rem;
+        }
+
+        .intro-text a {
+            color: #6f6961;
+            text-decoration: none;
+            border-bottom: 1px solid #cac5be;
+            font-weight: 500;
+            transition: border-color 0.2s;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #3e3c39;
+        }
+
+        /* 特点列表 — 温和、无强调记号 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 0.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1.8rem;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.98rem;
+            color: #4c4945;
+            width: calc(50% - 1rem);
+            min-width: 200px;
+            flex: 1 0 auto;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #b1aba4;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        /* 场景小段落 */
+        .scene-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .scene-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #efedeb;
+        }
+
+        .scene-item:last-child {
+            border-bottom: none;
+        }
+
+        .scene-icon {
+            font-size: 1.3rem;
+            min-width: 2rem;
+            line-height: 1.4;
+            color: #8a847c;
+        }
+
+        .scene-content {
+            flex: 1;
+        }
+
+        .scene-content p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #3f3d39;
+        }
+
+        /* 提示与FAQ摘要 */
+        .tip-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .tip-item {
+            background: #f7f6f4;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            border: 1px solid #e6e3df;
+        }
+
+        .tip-item strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #5f5a54;
+            margin-bottom: 0.25rem;
+        }
+
+        .tip-item p {
+            font-size: 0.9rem;
+            color: #4d4a45;
+            margin: 0;
+        }
+
+        /* 温和结尾 */
+        .footer-note {
+            text-align: center;
+            padding: 1.6rem 0 2rem;
+            border-top: 1px solid #dedad6;
+            margin-top: 1.2rem;
+        }
+
+        .footer-note p {
+            font-size: 0.9rem;
+            color: #7c7770;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-note a {
+            color: #6f6961;
+            text-decoration: none;
+            border-bottom: 1px solid #d2cdc6;
+            font-weight: 400;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #3e3c39;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-quote {
+                font-size: 1.3rem;
+                max-width: 100%;
+            }
+
+            .feature-list li {
+                width: 100%;
+                flex: 0 0 100%;
+            }
+
+            .tip-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scene-item {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .hero-quote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- 开场：简短叙述句 -->
+        <div class="card hero-card">
+            <div class="hero-quote">
+                有些故事，从一次传球开始，<br>
+                在哨声里沉淀，<span>在绿茵之上被反复讲述。</span>
+            </div>
+        </div>
+
+        <!-- 承接段落：从主题展开 -->
+        <div class="card">
+            <p class="intro-text">
+                四年一度，世界把目光转向同一块草坪。<strong>2026 年</strong>，北美大陆将迎来新一届 
+                <a href="https://play-2026fifa.com">世界杯</a>。
+                这不仅是赛事日历上的标记，更是一段跨越城市、时区与语言的共同记忆。
+                足球在此刻成为叙述者，把拼搏、遗憾与狂喜编进同一种节奏。
+            </p>
+            <p class="intro-text" style="margin-top: 1rem;">
+                从小组赛的试探到淘汰赛的孤注一掷，每一场比赛都在书写自己的章节。
+                看台上来自不同大洲的呐喊，汇聚成一种无需翻译的语言。
+                无论你是否熟悉每支球队的历史，那一瞬的屏息与欢呼，所有人都懂。
+            </p>
+        </div>
+
+        <!-- 特点列表：温和的侧面观察 -->
+        <div class="card">
+            <h3 style="font-weight: 400; font-size: 1.15rem; color: #4b4742; margin-bottom: 0.4rem; letter-spacing: 0.3px;">一些值得留意的侧面</h3>
+            <ul class="feature-list">
+                <li>跨越 16 个城市，时区从东海岸到西海岸</li>
+                <li>48 支队伍，首次采用全新的赛制节奏</li>
+                <li>比赛日与当地文化节庆自然交织</li>
+                <li>球场设计融入现代观众体验与社区空间</li>
+                <li>每个进球都可能成为一代人的记忆锚点</li>
+                <li>从揭幕战到决赛，叙述的弧线逐渐收紧</li>
+            </ul>
+        </div>
+
+        <!-- 场景：卡片式叙述具体瞬间 -->
+        <div class="card">
+            <h3 style="font-weight: 400; font-size: 1.15rem; color: #4b4742; margin-bottom: 1rem; letter-spacing: 0.3px;">那些构成故事的场景</h3>
+            <div class="scene-block">
+                <div class="scene-item">
+                    <div class="scene-icon">⚽</div>
+                    <div class="scene-content">
+                        <p>小组赛最后一轮，净胜球、积分、相互战绩——所有变量在九十分钟内不断重组。终场哨响时，有人跪地，有人被队友举起。</p>
+                    </div>
+                </div>
+                <div class="scene-item">
+                    <div class="scene-icon">🌆</div>
+                    <div class="scene-content">
+                        <p>傍晚的城市广场，大屏幕前聚满不同颜色的球衣。陌生人因为一次扑救击掌，下一秒又因为争议判罚争论，但始终在同一场雨里站着。</p>
+                    </div>
+                </div>
+                <div class="scene-item">
+                    <div class="scene-icon">📋</div>
+                    <div class="scene-content">
+                        <p>赛后混采区，记者围住进球者。他大汗淋漓，用母语回答之后，又切换成英语补了一句：“这不仅是我的故事。” 然后匆匆走向更衣室。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 提示 & FAQ 摘要 -->
+        <div class="card">
+            <h3 style="font-weight: 400; font-size: 1.15rem; color: #4b4742; margin-bottom: 0.8rem; letter-spacing: 0.3px;">一些你可能想了解的</h3>
+            <div class="tip-grid">
+                <div class="tip-item">
+                    <strong>赛程跨度</strong>
+                    <p>2026 年 6 月 11 日至 7 月 19 日，共 39 个比赛日。小组赛分布在三个国家。</p>
+                </div>
+                <div class="tip-item">
+                    <strong>主办城市</strong>
+                    <p>美国 11 座、加拿大 2 座、墨西哥 3 座，每座城市贡献独特的足球氛围与接待风格。</p>
+                </div>
+                <div class="tip-item">
+                    <strong>新赛制要点</strong>
+                    <p>48 队分为 12 个小组，每组前两名与 8 个成绩最好的小组第三晋级 32 强淘汰赛。</p>
+                </div>
+                <div class="tip-item">
+                    <strong>观赛提示</strong>
+                    <p>提前关注签证政策与球场交通；夏天气候跨度大，从温哥华到休斯顿需要准备不同衣物。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="footer-note">
+            <p>
+                足球的魅力在于，它从来不只是九十分钟的事情。<br>
+                它散落在旅途中的加油站、旅馆大堂的电视、凌晨三点的消息提示音里。<br>
+                关于 <a href="https://play-2026fifa.com">世界杯</a> 的叙述，每个人都是合著者。
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
